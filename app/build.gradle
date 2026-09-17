@@ -1,0 +1,9 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.eric.schedule'
+    compileSdk 35
+    defaultConfig { applicationId 'com.eric.schedule'; minSdk 23; targetSdk 35; versionCode 2; versionName '1.2.0' }
+    buildTypes { release { minifyEnabled false } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+}
+dependencies { implementation 'com.tom-roush:pdfbox-android:2.0.27.0' }
