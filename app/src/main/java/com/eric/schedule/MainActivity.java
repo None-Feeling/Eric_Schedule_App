@@ -40,6 +40,8 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity {
 
+    // v1.3.1 · repushed to main on 2026-09-19
+
     private static final int DEFAULT_SEMESTER_WEEKS = 16;
     private static final int REQ_IMPORT_PDF = 1207;
     private static final String PREFS = "schedule_prefs";
