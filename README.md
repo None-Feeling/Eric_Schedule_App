@@ -1,5 +1,7 @@
 # Eric Schedule App · Android
 
+> 当前仓库版本：**v1.3.1**（2026-09-19 已重新同步到 `main`）
+
 这是一个原生 Android 课表 App，支持西南大学教务课表 PDF 导入。
 
 ## v1.3 更新
