@@ -23,4 +23,24 @@ jobs:
       - name: Build for iPhone Simulator
         working-directory: ios
         run: |
-          xcodebuild             -project EricScheduleiOS.xcodeproj             -scheme EricScheduleiOS             -sdk iphonesimulator             -configuration Debug             CODE_SIGNING_ALLOWED=NO             build
+          xcodebuild \
+            -project EricScheduleiOS.xcodeproj \
+            -scheme EricScheduleiOS \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package validated Xcode project
+        working-directory: ios
+        run: |
+          mkdir -p dist
+          cp -R EricScheduleiOS.xcodeproj EricScheduleiOS README.md project.yml dist/
+          ditto -c -k --sequesterRsrc dist EricScheduleiOS-v1.0-Xcode.zip
+
+      - name: Upload validated Xcode project
+        uses: actions/upload-artifact@v4
+        with:
+          name: EricScheduleiOS-v1.0-Xcode
+          path: ios/EricScheduleiOS-v1.0-Xcode.zip
+          if-no-files-found: error
